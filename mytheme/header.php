@@ -14,14 +14,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
 
-<!-- OGP -->
-<meta property="og:title" content="page_title書く" />
-<meta property="og:type" content="blog" />
-
-<meta property="og:site_name" content="site_title書く" />
-<meta property="og:description" content="シェア時のテキスト">
-<meta property="og:url" content="シェア時のURL" />
-
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

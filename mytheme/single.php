@@ -19,7 +19,7 @@
 				<span class="tag"><?php the_tags(' '); ?></span></p>
 
 				<div class="pagenav cf">
-					<span class="prev">
+					<span class="prevPost">
 						古い記事:<?php
 						$previous_post = get_previous_post();
 						$pre_post_title = $previous_post->post_title;
@@ -28,7 +28,7 @@
 							<a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>" title="<?php echo $previous_post->post_title; ?>"><i class="fa fa-chevron-circle-left"></i> <?php echo $pre_post_title; ?></a>
 						<?php endif; ?>
 					</span>
-					<span class="next">
+					<span class="nextPost">
 						新しい記事:<?php
 						$next_post = get_next_post();
 						$next_post_title = $next_post->post_title;
@@ -53,7 +53,7 @@
 		<?php comments_template('', true); ?>
 
 			<div id="backTop">
-				<p><a href="#pageTop">ページの先頭に戻る</a></p>
+				<p><a href="#pageTop">Back to Top</a></p>
 			</div>
 		</div>
 	</div>

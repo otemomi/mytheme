@@ -12,6 +12,19 @@
 
 /* 6. parts
 -------------------------------------------------------------------*/
+.fadeOut {
+    -webkit-animation: fadeOut .5s cubic-bezier(.55,0,.1,1) both;
+    animation: fadeOut .5s cubic-bezier(.55,0,.1,1) both;
+}
+.fadeIn {
+    -webkit-animation: fadeIn .5s cubic-bezier(.55,0,.1,1) both;
+    animation: fadeIn .5s cubic-bezier(.55,0,.1,1) both;
+}
+
+@-webkit-keyframes fadeOut { to { opacity: 0; -webkit-transform: scale(1.2); }}
+@keyframes fadeOut { to { opacity: 0; -webkit-transform: scale(1.2); transform: scale(1.2); }}
+@-webkit-keyframes fadeIn { from { opacity: 0; -webkit-transform: scale(.8); }}
+@keyframes fadeIn { from { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }}
 
 
 /* 6-1. h
@@ -268,7 +281,7 @@ input[type="submit"] {
 	color: #bd1515;
 }
 
-	.prev {
+	.prevPost {
 		display: block;
 		float: left;
 		width: 40%;
@@ -276,7 +289,7 @@ input[type="submit"] {
 		padding: 10px;
 	}
 
-	.next {
+	.nextPost {
 		display: block;
 		float: right;
 		width: 40%;
@@ -285,7 +298,7 @@ input[type="submit"] {
 		text-align: right;
 	}
 
-	.prev a, .next a {display: block;}
+	.prevPost a, .nextPost a {display: block;}
 }
 
 .commentsList {
@@ -343,14 +356,14 @@ WP-Page Navi
 ---------------------------------------------------- */
 .navigation { padding: 15px; text-align:center;}
 
-.wp-pagenavi {
+.wp-pagenavi, .pager {
 	padding-top: 40px;
 	font-weight: normal;
 	text-align: center;
 }
 .wp-pagenavi a, .wp-pagenavi a:visited,
  .wp-pagenavi span.pages, .wp-pagenavi span.current,
- .wp-pagenavi span.extend {
+ .wp-pagenavi span.extend, .pager a, .pager span {
 	padding: 5px 10px !important;
 	margin: 3px 4px;
 	text-decoration: none;
@@ -358,13 +371,7 @@ WP-Page Navi
 	border-radius: 5px;
 }
 
-.wp-pagenavi a, .wp-pagenavi a:visited,
-.wp-pagenavi span.pages, .wp-pagenavi span.extend {
-	color: #666;
-	background-color: #e7e8e3;
-}
-
-.wp-pagenavi span.current {
+.wp-pagenavi span.current, .pager span{
 	color: #fff;
 	background-color: #656ff4 !important;
 }
