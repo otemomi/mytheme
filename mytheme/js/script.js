@@ -12,7 +12,7 @@ $(function() {
 	topBtn.click(function () {
 		$('body,html').animate({
 			scrollTop: 0
-		}, 250);
+		}, 500);
 		return false;
 	});
 });
