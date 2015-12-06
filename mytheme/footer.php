@@ -1,6 +1,6 @@
 <footer>
 	<div id="footer">
-		<div class="inner">
+		<div class="container">
 		<div id="about">
 			<h2>About this site</h2>
 			<p>
@@ -9,7 +9,11 @@
 			</p>
 		</div>
 
-		<div id="copyright"><small>© Yatsute.com. This site is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons Attribution-NonCommercial 4.0 License</a>.</small></div>
+		<div id="copyright">
+			<small>
+				© Yatsutelog. This site is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja">Creative Commons Attribution-NonCommercial 4.0 License</a>.
+			</small>
+		</div>
 	</div>
 	</div>
 </footer>

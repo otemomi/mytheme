@@ -1,13 +1,14 @@
 /*
-Theme Name: Yatsute.com
-Theme URI:
+Theme Name: Yatsutelog theme
+Theme URI: http://otemomi.minibird.jp/
 Author: Tetsuya Ono
 Author URI:
-Description: WordPress Themes Made From Pure
-Version: 0.1
+Description: WordPress Themes Made From Skeleton (http://getskeleton.com/)
+Version: 1.201512
 */
 
-@import "css/sanitize.min.css" ;
+@import "css/normalize.css" ;
+@import "css/skeleton.css";
 @import "css/base.css" ;
 @import "css/page.css" ;
 @import "css/module.css";

@@ -1,28 +1,4 @@
 @charset "utf-8";
-
-/* CSSの記述順序
- * display
- * list-style
- * position
- * float
- * clear
- * margin
- * border
- * width
- * height
- * padding
- * background
- * color
- * font
- * text-decoration
- * text-align
- * vertical-align
- * white-space
- * other text
- * content
- *
- */
-
  /* ----------------------------------------------------
 目次
 1. basic
@@ -40,15 +16,7 @@
 body {
 	background: #fff;
 	color: #333;
-	font: 16px "Hiragino Kaku Gothic ProN", Meiryo, sans-serif normal;
-	line-height: 1.5;
-}
-
-img {
-	display: block;
-	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	font: 1.5rem "Hiragino Kaku Gothic ProN", Meiryo, sans-serif normal;
 }
 
 .dspNo {display: none;}
@@ -58,8 +26,6 @@ img {
 .cf:before, .cf:after {content: " "; display: table;}
 .cf:after {clear: both;}
 .cf {*zoom: 1;}
-
-li {margin-left: 40px; }
 
 .imgResponsive {
 	display: block;
@@ -76,30 +42,40 @@ li {margin-left: 40px; }
 -------------------------------------------------------------------*/
 #header {
 	padding-bottom: 50px;
-	/* グラデーション */
-	background: rgb(189,21,21);
-	background: -moz-linear-gradient(-45deg,  rgba(189,21,21,1) 0%, rgba(0,153,255,1) 100%);
-	background: -webkit-linear-gradient(-45deg,  rgba(189,21,21,1) 0%,rgba(0,153,255,1) 100%);
-	background: linear-gradient(135deg,  rgba(189,21,21,1) 0%,rgba(0,153,255,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd1515', endColorstr='#0099ff',GradientType=1 );
-	/* グラデーション終わり */
 	text-align: center;
 	font-family: 'Niconne', cursive;
+	background: linear-gradient(130deg, #bd1515, #0099ff, #ff0066);
+	background-size: 600% 600%;
+
+	-webkit-animation: AnimationName 27s ease infinite;
+	-moz-animation: AnimationName 27s ease infinite;
+	animation: AnimationName 27s ease infinite;
 }
+	@-webkit-keyframes AnimationName {
+		0%{background-position:0% 28%}
+		50%{background-position:100% 73%}
+		100%{background-position:0% 28%}
+	}
+	@-moz-keyframes AnimationName {
+		0%{background-position:0% 28%}
+		50%{background-position:100% 73%}
+		100%{background-position:0% 28%}
+	}
+	@keyframes AnimationName { 
+		0%{background-position:0% 28%}
+		50%{background-position:100% 73%}
+		100%{background-position:0% 28%}
+	}
+
 
 #header a, #header.fixed a {
 	color: #fff;
 	text-decoration: none;
 }
 
-.inner {
+ #header .container {
 	margin: 0 auto;
 	padding: 30px 0;
-}
-
-#logo {
-	font-size: 3em;
-	font-weight: normal;
 }
 
 /* 斜めの仕切り線 */
@@ -115,97 +91,79 @@ li {margin-left: 40px; }
 @media screen and (min-width: 769px){
 	#header {padding-bottom: 100px;}
 	#header:after {height: 100px;}
-	.inner {
-		width: 960px;
-		margin: 0 auto;
-		padding: 50px 0;
-	}
 }
 
 /* 2-1. nav
 -------------------------------------------------------------------*/
-#gNav {padding-top: 30px;}
+#gNav {
+	margin: 0 auto;
+	padding-top: 50px;
+}
 
 #gNav li {
 	display: inline-block;
-	font-size: 1.8em;}
-
-#gNav li a {
-	position: relative;
-	padding: 5px 20px;
-	color: #fff;
-	transition: .3s;
+	font-size: 2em;
 }
 
-#gNav a::after {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	content: '';
-	width: 0;
-	height: 1px;
-	background-color: #fff;
-	transition: .3s;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
-}
-#gNav a:hover::after {width: 100%;}
-
-#gNav li a:hover {color: #0099ff;}
+#gNav li a {padding: 5px 20px;}
 
 @media screen and (min-width: 769px) {
-	#gNav {
-		margin: 0 auto;
-		padding-top: 50px;
-	}
-
 	#gNav li {
 		display: inline;
 		margin: 0;
+	}
+
+	#gNav li a {
+		position: relative;
+		transition: .6s;
+	}
+
+	#gNav a::after {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		content: '';
+		width: 0;
+		height: 1px;
+		background-color: #0099ff;
+		transition: .3s;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+
+	#gNav a:hover::after {width: 100%;}
+
+	#gNav li a:hover {
+		background: #fff;
+		color: #0099ff;
 	}
 }
 
 /* 3. contents
 -------------------------------------------------------------------*/
 #contents {
-	height: auto;
+	font-size: 1.7rem;
 	padding-bottom: 100px;
-	font-size: 1.125em;
 }
 
 #contents a {
 	padding: 1px 0;
-	background-image: linear-gradient(rgba(0,0,0,0) 50%, rgba(101,111,244,1.0) 50%);
-	background-position: 0 0;
-	background-size: auto 200%;
 	color: #656ff4;
 	transition: .3s;
 	text-decoration: none;
 }
 
 #contents a:hover {
-	background-position: 0 100%;
+	background: #656ff4;
 	color: #fff;
 }
 
-.date {font-size: 2em;}
-
-#main h2 {
-	clear: both;
-	font-size: 2em;
+.date {
+	color: #555;
+	font-size: 1.1em;
 }
 
-#main h3 {
-	clear: both;
-	padding-left: 8px;
-	border-left: 6px solid #333;
-}
-
-#main p, #main ul {margin: 0 10px;}
-
-#main li img {margin-top: 10px;}
-
-#main p img {margin: 5px auto;}
+#main h2 {clear: both;}
 
 #contents:after {
 	content: "";
@@ -218,49 +176,29 @@ li {margin-left: 40px; }
 }
 
 .cat {
-	padding: 3px 0 3px 20px;
+	padding: 5px 0 5px 20px;
 	background: url(../images/common/icon_cat.png) no-repeat 0 4px;
 	font-size: 0.9em;
 }
 
 .tag {
 	margin-left: 20px;
-	padding: 3px 0 3px 24px;
+	padding: 5px 0 5px 24px;
 	background: url(../images/common/icon_tag.png) no-repeat 0 4px;
 	font-size: 0.9em;
 }
 
-.archiveImg {
-	float: left;
-	margin-right: 20px;
-}
-
-.archiveImg img {padding-right: 20px;}
-
-.archiveTtl {
-	margin-top:30px;
-	font-size: 1.3em;
-}
-
 .searchEx {background: yellow;}
+
 @media screen and (min-width: 769px) {
-	#main {
-		width: 960px;
-		margin: auto;
-	}
-
-	#main ul {margin: 0;}
-
-	#main p {margin: 20px 0;}
-
-	#main p a:first-child {margin-right: 8px;}
-
-	#main li img {
-		margin-top: 0;
-		margin-bottom: 5px;
-	}
-
 	.more-link {padding: 10px 0;}
+
+	.archiveImg {
+		float: left;
+		margin-right: 20px;
+	}
+
+	.archiveImg img {padding-right: 20px;}
 }
 
 /* 4. sub
@@ -268,25 +206,16 @@ li {margin-left: 40px; }
 #sub {
 	padding-bottom: 100px;
 	background: #f4f4f4;
-	text-align: center;
 }
 
-#sub .inner img {margin-bottom: 10px;}
+#sub .archive {text-align: center;}
+#sub img {margin-bottom: 10px;}
 
-#sub .inner h2 {
+#sub h2 {
 	margin-top: 30px;
 	font-family: 'Niconne', cursive;
-	font-size: 2em;
 	font-weight: normal;
-	letter-spacing: 4px;
-	text-shadow: -1px -1px 0px #222, 1px 1px 0px #fff;
-}
-
-#sub .inner p {margin: 10px 0;}
-
-#sub .inner h2 {
-	padding: 10px;
-	text-align: center;
+	text-shadow: 1px 1px 0px #fff;
 }
 
 #sub:after {
@@ -306,6 +235,7 @@ li {margin-left: 40px; }
 	right: 20px;
 	font-family: 'Niconne', cursive;
 	font-size: 1.5em;
+	z-index: 10;
 }
 
 #backTop a {
@@ -327,23 +257,25 @@ li {margin-left: 40px; }
 	border: 1px solid #bd1515;
 }
 
+.archive img {
+	border: 10px solid #fff;
+	box-shadow: 0px 0px 5px #888;
+}
+
+.caption {
+	margin: 0 0 50px;
+}
+
 @media screen and (min-width: 769px) {
-	#sub .inner h2 {
-		margin-top: 0;
-		text-align: left;
-	}
-
-	#sub .inner p {margin: 5px 0;}
-
-	.archive {
-		transform: skewY(-6.2deg);
+	/*.archive {
+		transform: skewY(-5deg);
 		transform-origin: top right;
 	}
 
 	.imgMask {
-		transform: skewY(-6.2deg);
+		transform: skewY(-5deg);
 		transform-origin: top right;
-	}
+	}*/
 
 	.archive {
 		float: left;
@@ -352,13 +284,11 @@ li {margin-left: 40px; }
 		text-align: center;
 	}
 
-	.archive img {border: 2px solid #bd1515;}
-
 	.caption {
-		width: 456px;
-		height: 330px;
+		width: 432px;
+		height: 313px;
 		background: rgba(0,0,0,.8);
-		border: 2px solid #bd1515;
+		border: 10px solid rgba(189,21,21,.8);
 		overflow: hidden;
 		cursor: pointer;
 	}
@@ -375,8 +305,8 @@ li {margin-left: 40px; }
 
 	.caption {
 		position: absolute;
-		top: 5px;
-		left: 12px;
+		top: 0;
+		left: 14px;
 		z-index: 0;
 		-webkit-transition: .3s;
 		transition: .3s;
@@ -394,7 +324,7 @@ li {margin-left: 40px; }
 	}
 
 	.caption h3 {
-		top: 70px;
+		top: 100px;
 		font-size: 2em;
 	}
 
@@ -425,28 +355,20 @@ li {margin-left: 40px; }
 	color: #fff;
 }
 
-#footer .inner {
-	padding: 10px 0;
-}
 #copyright {
 	clear: both;
-	padding-top: 20px;
+	padding-top: 10px;
 	font-size: 1.2em;
 }
 
-#footer .inner h2 {
+#footer h2 {
 	font-family: 'Niconne', cursive;
-	font-size: 2em;
 	font-weight: normal;
 }
-#footer .inner a, #footer .inner a:visited {
+#footer a, #footer  a:visited {
 	display: inline;
-	color: #fff;
-	text-decoration: none;
+	color: #ddd;
 }
 
 @media screen and (min-width: 769px) {
-	#about {
-		margin-top: -10px;
-	}
 }

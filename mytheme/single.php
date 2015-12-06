@@ -2,7 +2,7 @@
 
 <main>
 	<div id="contents">
-		<div id="main">
+		<div id="main" class="container">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<p class="date"><?php the_date(); ?></p>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -19,22 +19,24 @@
 				<span class="tag"><?php the_tags(' '); ?></span></p>
 
 				<div class="pagenav cf">
-					<span class="prev">
-						古い記事:<?php
+						<?php
 						$previous_post = get_previous_post();
 						$pre_post_title = $previous_post->post_title;
 						if ( mb_strlen( $pre_post_title ) > 18 ) { $pre_post_title = mb_substr( $pre_post_title, 0, 18).'...'; }
 						if ( !empty( $previous_post ) ): ?>
-							<a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>" title="<?php echo $previous_post->post_title; ?>"><i class="fa fa-chevron-circle-left"></i> <?php echo $pre_post_title; ?></a>
+							<span class="prevPost">
+								&lt;&lt; Previous <a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>" title="<?php echo $previous_post->post_title; ?>"><i class="fa fa-chevron-circle-left"></i> <?php echo $pre_post_title; ?></a>
+							</span>
 						<?php endif; ?>
-					</span>
-					<span class="next">
-						新しい記事:<?php
+
+						<?php
 						$next_post = get_next_post();
 						$next_post_title = $next_post->post_title;
 						if ( mb_strlen( $next_post_title ) > 18 ) { $next_post_title = mb_substr( $next_post_title, 0, 18).'...'; }
 						if ( !empty( $next_post ) ): ?>
-							<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo $next_post->post_title; ?>"><?php echo $next_post_title; ?> <i class="fa fa-chevron-circle-right"></i></a>
+							<span class="nextPost">
+								Next &gt;&gt; <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo $next_post->post_title; ?>"><?php echo $next_post_title; ?> <i class="fa fa-chevron-circle-right"></i></a>
+							</span>
 						<?php endif; ?>
 					</span>
 				</div>
@@ -48,12 +50,12 @@
 	</div>
 
 	<div id="sub">
-		<div class="inner cf">
+		<div class="container cf">
 		<h2>Comments</h2>
 		<?php comments_template('', true); ?>
 
 			<div id="backTop">
-				<p><a href="#pageTop">ページの先頭に戻る</a></p>
+				<p><a href="#pageTop">Back to Top</a></p>
 			</div>
 		</div>
 	</div>

@@ -16,6 +16,32 @@
 
 /* 6-1. h
 -------------------------------------------------------------------*/
+h3 {
+	clear: both;
+	font-size: 1.2em;
+}
+
+.line {
+	color: #bd1515;
+	padding-left: 1.3em;
+	position: relative;
+}
+
+.line:first-letter {
+	font-size: 1.6em;
+}
+
+.line::after {
+	position: absolute;
+	top: 0.7em;
+	left: 0;
+	z-index: 2;
+	content: '';
+	width: 9px;
+	height: 9px;
+	border: 5px solid #09f;
+	border-radius: 100%
+}
 
 /* 6-2. table
 -------------------------------------------------------------------*/
@@ -28,141 +54,21 @@
 
 /* 7. form
 -------------------------------------------------------------------*/
-.searchform label {display: none;}
-input[type="text"], input[type="email"],
-input[type="url"], textarea {
-	width: 70%;
-	padding: 5px;
-	background: #fff;
-	border: 1px solid #aaa;
-	border-radius: 4px;
+textarea {
+	min-height: 200px;
+	max-height: 400px;
+	resize: vertical;
 }
 
-input[type="submit"] {
-	padding: 5px 25px;
-	background: #2a7ccc;
-	border: 1px solid #2a7ccc;
-	border-radius: 4px;
-	color: #fff;
-}
 
-.contactInfo {
-	float: left;
-	width: 40%;
-}
 
-.contactTxt {
-	float: right;
-	width: 60%;
-}
-.contactInfo input[type="text"],
-.contactInfo input[type="email"],
-.contactInfo input[type="url"],
-.contactTxt textarea {
-	width: 90%;
-}
-
-.contactBtn {
-	text-align: right;
-}
-
-.contactBtn input[type="submit"] {
-	width: 45%;
-	margin-right: 3.6%;
-}
-
-@media screen and (max-width: 768px){
-	table {
-		width: 100%;
-		margin: auto;
-		border-top: 1px solid #ddd;
-	}
-
-	tr {
-		display: block;
-		padding: 10px;
-	}
-
-	th, td, .th {
-		display: block;
-		text-align: left;
-	}
-
-	tr:nth-child(odd) {
-		background: #f4f4f4;
-		border-bottom: 1px solid #ddd;
-	}
-
-	tr:nth-child(even) {border-bottom: 1px solid #ddd;}
-
-	input[type=text], textarea {
-		width: 94%;
-		max-width: 100%;
-	}
-
-	#main h2 {margin-top: 10px;}
-}
-
-@media screen and (min-width: 769px){
-	table {
-		width: 100%;
-		margin: 0 auto;
-		border: 1px solid #ddd;
-		border-bottom: none;
-	}
-
-	tr {
-		width: 100%;
-		display: table;
-		border-bottom: 1px solid #ddd;
-	}
-
-	th {
-		display: table-cell;
-		width: 20%;
-		min-width: 80px;
-		padding: 10px 5px;
-		background: #f4f4f4;
-		border-right: 1px solid #ddd;
-		text-align: center;
-	}
-
-	.th {
-		width: 60%;
-		min-width: 80px;
-		padding: 10px 5px;
-		background: #f4f4f4;
-		border-right: 1px solid #ddd;
-		text-align: center;
-
-	 }
-
-	td {
-		display: table-cell;
-		padding: 5px 0 5px 15px;
-	}
-
-	.listcat {
-		float: none;
-	}
-	.search {text-align: left;}
-	.archives, .search {
-		float: left;
-		width: 50%;
-		text-align: left;
-	}
-
-	.archives {margin-bottom: 30px;}
-.archives h2, .tags h2 {
-	margin-bottom: 10px;
-}
 
 .archives ul li a {
 	position: relative;
 	display: inline-block;
-	width: 230px;
+	width: 12em;
 	height: 32px;
-	line-height: 30px;
+	line-height: 32px;
 	padding: 0 2.5em 0 1em;
 	background-color: #fff;
 	border: 1px solid #aaa;
@@ -178,12 +84,12 @@ input[type="submit"] {
 }
 .archives li span {
 	position: absolute;
-	top: 3px;
-	right: 3px;
+	top: 5px;
+	right: 5px;
 	z-index: 2;
 	width: 22px;
-	height: 23px;
-	line-height: 25px;
+	height: 22px;
+	line-height: 23px;
 	background-color: #2a7ccc;
 	border-radius: 3px;
 	color: #fff;
@@ -203,14 +109,11 @@ input[type="submit"] {
 }
 	.archiveH, .pagetitle {
 		margin: 0 0 30px;
-		font-family: 'Niconne', cursive !important;
-		font-size: 2em !important;
-		font-weight: normal;
+		font-family: 'Niconne', cursive;
 	}
 
 	.tags {
 		float: right;
-		width: 50%;
 	}
 
 .tags ul {
@@ -228,7 +131,7 @@ input[type="submit"] {
 	display: inline-block;
 	max-width: 140px;
 	height: 32px;
-	line-height: 30px;
+	line-height: 32px;
 	padding: 0 2.5em 0 1em;
 	background-color: #fff;
 	border: 1px solid #aaa;
@@ -244,12 +147,12 @@ input[type="submit"] {
 }
 .tags li span {
 	position: absolute;
-	top: 3px;
-	right: 3px;
+	top: 5px;
+	right: 5px;
 	z-index: 2;
 	width: 22px;
-	height: 23px;
-	line-height: 25px;
+	height: 22px;
+	line-height: 23px;
 	background-color: #bd1515;
 	border-radius: 3px;
 	color: #fff;
@@ -268,24 +171,33 @@ input[type="submit"] {
 	color: #bd1515;
 }
 
-	.prev {
-		display: block;
+.searchform label {display: none;}
+
+.prevPost, .nextPost {
+	display: block;
+	width: 90%;
+	margin: 20px 0;
+	padding: 2% 5%;
+	background: #f4f4f4;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+}
+.nextPost {text-align: right;}
+
+.prevPost a, .nextPost a {display: block;}
+
+@media screen and (min-width: 769px) {
+	.prevPost {
 		float: left;
-		width: 40%;
-		margin: 10px 0;
 		padding: 10px;
+		width: 40%;
 	}
 
-	.next {
-		display: block;
+	.nextPost {
 		float: right;
-		width: 40%;
-		margin: 10px 0;
 		padding: 10px;
-		text-align: right;
+		width: 40%;
 	}
-
-	.prev a, .next a {display: block;}
 }
 
 .commentsList {
@@ -338,19 +250,22 @@ input[type="submit"] {
 	text-align: left;
 }
 
+.search {text-align: left;}
+
 /* ---------------------------------------------------
 WP-Page Navi
 ---------------------------------------------------- */
 .navigation { padding: 15px; text-align:center;}
 
-.wp-pagenavi {
+.wp-pagenavi, .pager {
+	clear: both;
 	padding-top: 40px;
 	font-weight: normal;
 	text-align: center;
 }
 .wp-pagenavi a, .wp-pagenavi a:visited,
  .wp-pagenavi span.pages, .wp-pagenavi span.current,
- .wp-pagenavi span.extend {
+ .wp-pagenavi span.extend, .pager a, .pager span {
 	padding: 5px 10px !important;
 	margin: 3px 4px;
 	text-decoration: none;
@@ -358,13 +273,13 @@ WP-Page Navi
 	border-radius: 5px;
 }
 
-.wp-pagenavi a, .wp-pagenavi a:visited,
+.wp-pagenavi a, .wp-pagenavi a:visited, .pager a,
 .wp-pagenavi span.pages, .wp-pagenavi span.extend {
 	color: #666;
 	background-color: #e7e8e3;
 }
 
-.wp-pagenavi span.current {
+.wp-pagenavi span.current , .pager span{
 	color: #fff;
 	background-color: #656ff4 !important;
 }

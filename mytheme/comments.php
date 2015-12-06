@@ -9,5 +9,5 @@
 <?php if(pings_open()): ?>
 	<h3 id="trback">
 		Track Back URL</h3>
-		<p><input type="text" name="textbox" onclick="this.focus();this.select();" value="<?php trackback_url(); ?>"></p>
+		<p><input class="u-full-width" type="text" name="textbox" onclick="this.focus();this.select();" value="<?php trackback_url(); ?>"></p>
 <?php endif; ?>

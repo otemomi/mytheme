@@ -2,7 +2,7 @@
 
 <main>
 	<div id="contents">
-		<div id="main">
+		<div id="main" class="container">
 			<h2 class="archiveH">
 				<?php if( is_search()){ // もし検索結果ページなら
 					$allsearch =& new WP_Query("s=$s&showposts=-1");

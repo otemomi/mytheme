@@ -1,5 +1,5 @@
 	<div id="sub">
-		<div class="inner cf">
+		<div class="container cf">
 		<h2>Recent article</h2>
 
 		<?php $post_args = array( 'posts_per_page' => 4, 'offset' => 1 );
@@ -33,7 +33,7 @@
 		</div>
 		<?php endforeach; wp_reset_postdata(); ?>
 
-			<div id="backTop">
+			<div id="backTop" class="clear">
 				<p><a href="#pageTop">Back to Top</a></p>
 			</div>
 		</div>
