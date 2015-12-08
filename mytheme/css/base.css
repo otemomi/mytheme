@@ -91,6 +91,7 @@ body {
 @media screen and (min-width: 769px){
 	#header {padding-bottom: 100px;}
 	#header:after {height: 100px;}
+	#header .container {background: url(../images/common/bg_header.png) no-repeat bottom;}
 }
 
 /* 2-1. nav
@@ -147,15 +148,19 @@ body {
 }
 
 #contents a {
-	padding: 1px 0;
-	color: #656ff4;
+	margin: 0 2px;
+	padding: 1px 5px;
 	transition: .3s;
-	text-decoration: none;
 }
 
 #contents a:hover {
-	background: #656ff4;
+	background: #0FA0CE;
 	color: #fff;
+}
+
+#contents h2 a {
+	margin: 0;
+	text-decoration: none;
 }
 
 .date {
@@ -198,7 +203,6 @@ body {
 		margin-right: 20px;
 	}
 
-	.archiveImg img {padding-right: 20px;}
 }
 
 /* 4. sub
@@ -208,7 +212,6 @@ body {
 	background: #f4f4f4;
 }
 
-#sub .archive {text-align: center;}
 #sub img {margin-bottom: 10px;}
 
 #sub h2 {
@@ -258,7 +261,6 @@ body {
 }
 
 .archive img {
-	border: 10px solid #fff;
 	box-shadow: 0px 0px 5px #888;
 }
 
@@ -276,74 +278,6 @@ body {
 		transform: skewY(-5deg);
 		transform-origin: top right;
 	}*/
-
-	.archive {
-		float: left;
-		width: 50%;
-		height: auto;
-		text-align: center;
-	}
-
-	.caption {
-		width: 432px;
-		height: 313px;
-		background: rgba(0,0,0,.8);
-		border: 10px solid rgba(189,21,21,.8);
-		overflow: hidden;
-		cursor: pointer;
-	}
-
-	.caption a {
-		color: #fff;
-		text-decoration: none;
-	}
-
-	.archive {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.caption {
-		position: absolute;
-		top: 0;
-		left: 14px;
-		z-index: 0;
-		-webkit-transition: .3s;
-		transition: .3s;
-		opacity: 0;
-	}
-
-	.caption h3,
-	.caption p {
-		position: absolute;
-		left: -100%;
-		width: 400px;
-		color: #fff;
-		-webkit-transition: .3s;
-		transition: .3s;
-	}
-
-	.caption h3 {
-		top: 100px;
-		font-size: 2em;
-	}
-
-	.caption p {bottom: 20px;}
-
-	.archive:hover .caption {opacity: 1;}
-
-	.archive:hover .caption h3,
-	.archive:hover .caption p {left: 20px;}
-
-	.archive:hover .caption h3 {
-		-webkit-transition-delay: .1s;
-		transition-delay: .1s;
-	}
-
-	.archive:hover .caption p {
-		-webkit-transition-delay: .3s;
-		transition-delay: .3s;
-	}
 }
 
 /* 5. footer

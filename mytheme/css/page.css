@@ -51,6 +51,21 @@ h3 {
 
 /* 6-4. text
 -------------------------------------------------------------------*/
+.outlink {
+	padding: 15px 5px 15px 32px;
+	display: block;
+	color: #fff;
+	background: #f4f4f4 url(../images/common/icon_link.png) no-repeat 3px 9px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1.4rem;
+}
+
+code {
+	color: #fff;
+	background: #322;
+	border: 1px solid #666;
+}
 
 /* 7. form
 -------------------------------------------------------------------*/
